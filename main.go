@@ -3,8 +3,8 @@ package main
 import (
     "fmt"
     "log"
-    "test/config"
-    "test/internal/service"
+    "github.com/Petr0752/test/config"
+    "github.com/Petr0752/test/internal/service"
 )
 
 func main() {

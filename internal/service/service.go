@@ -2,7 +2,9 @@ package service
 
 import (
     "fmt"
-    "your_project/config"
+    "log"
+    "github.com/Petr0752/config"
+    "github.com/gofiber/fiber/v2"
 )
 
 type Service struct {
@@ -14,5 +16,13 @@ func NewService(cfg *config.Config) *Service {
 }
 
 func (s *Service) Run() {
-    fmt.Println("Значение переменной:", s.cfg.SomeField)
+    app := fiber.New()
+
+    // Определение маршрута GET
+    app.Get("/", func(c *fiber.Ctx) error {
+        return c.SendString(s.cfg.SomeField)
+    })
+
+    fmt.Println("Сервер запущен на порту 8080")
+    log.Fatal(app.Listen(":8080"))
 }
