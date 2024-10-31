@@ -3,7 +3,7 @@ package service
 import (
     "fmt"
     "log"
-    "github.com/Petr0752/config"
+    "github.com/Petr0752/test/config"
     "github.com/gofiber/fiber/v2"
 )
 
